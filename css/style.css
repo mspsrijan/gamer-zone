@@ -10,6 +10,26 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+h3 {
+  color: #0b0223;
+  font-size: 2rem;
+  line-height: 1.4em;
+  font-weight: 700;
+}
+
+h3 span {
+  background: linear-gradient(180deg, #f948b2 0%, #8758f1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: #534c64;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .btn {
   padding: 15px 30px;
   border-radius: 40px;
@@ -39,20 +59,27 @@ header,
 .site-title,
 nav ul,
 .follow-us,
-.hero-wrap {
+.hero-wrap,
+.about-us,
+.about-text,
+.feature {
   display: flex;
   align-items: center;
 }
 
 header,
-.hero-wrap {
+.hero-wrap,
+.about-us,
+.online-games,
+.feature {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 50px;
 }
 
 header,
-.hero-wrap {
+.hero-wrap,
+.about-us {
   justify-content: space-between;
 }
 
@@ -166,6 +193,142 @@ nav li a:hover,
   max-width: 600px;
 }
 
+/** About Us **/
+.about-image img {
+  width: 700px;
+  padding-right: 80px;
+}
+
+.about-text {
+  text-align: right;
+  flex-direction: column;
+  gap: 20px;
+  align-items: end;
+}
+
+/** Online Games **/
+.online-games {
+  text-align: center;
+  padding: 80px 50px;
+}
+
+.video-cards {
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: calc(25% - 15px);
+  position: relative;
+  border-radius: 15px;
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 0;
+}
+
+.card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 0 3px 3px #de338c;
+}
+
+.card-image:hover .overlay {
+  opacity: 1;
+}
+
+.card .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card .watch-now {
+  text-align: center;
+  font-weight: 500;
+  color: #ff42a5;
+  display: block;
+  margin-top: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card p {
+  padding-top: 15px;
+  text-align: left;
+}
+
+/** Feature **/
+.feature {
+  gap: 100px;
+}
+
+.feature-1 {
+  text-align: right;
+  justify-content: end;
+}
+
+.feature-2 {
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.feature-text {
+  max-width: 400px;
+}
+
+.feature-text p {
+  padding-top: 40px;
+}
+
+.feature-image .main-image {
+  max-width: 500px;
+}
+
+.feature-1 .feature-image .main-image {
+  padding-left: 100px;
+}
+.feature-2 .feature-image .main-image {
+  padding-right: 100px;
+}
+
+.feature-image .sub-image {
+  display: block;
+  position: relative;
+  max-width: 200px;
+  bottom: 150px;
+}
+
+.feature-2 .feature-image .sub-image {
+  right: -400px;
+}
+
 @media only screen and (max-width: 768px) {
   .header-wrap,
   .hero-wrap {
@@ -173,7 +336,9 @@ nav li a:hover,
   }
 
   header,
-  .hero-wrap {
+  .hero-wrap,
+  .about-us,
+  .feature {
     flex-direction: column;
     padding: 15px 30px;
   }
@@ -200,8 +365,34 @@ nav li a:hover,
     margin: 0 auto;
   }
 
-  .hero-image img {
+  .hero-image img,
+  .about-image img {
     max-width: 450px;
+  }
+
+  .about-image img {
+    padding-right: unset;
+  }
+
+  .about-text {
+    text-align: center;
+    align-items: center;
+    max-width: 600px;
+  }
+
+  .card {
+    width: calc(50% - 20px);
+    padding: 10px 0;
+  }
+
+  .feature {
+    gap: 40px;
+  }
+
+  .feature-1,
+  .feature-2 {
+    text-align: center;
+    justify-content: center;
   }
 }
 
@@ -214,7 +405,32 @@ nav li a:hover,
     flex-direction: column;
   }
 
-  .hero-image img {
+  .hero-image img,
+  .about-image img {
     max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .feature-image .main-image {
+    max-width: 300px;
+  }
+
+  .feature-1 .feature-image .main-image {
+    padding-left: 50px;
+  }
+  .feature-2 .feature-image .main-image {
+    padding-right: 50px;
+  }
+
+  .feature-image .sub-image {
+    max-width: 150px;
+    bottom: 100px;
+  }
+
+  .feature-2 .feature-image .sub-image {
+    right: -200px;
   }
 }
